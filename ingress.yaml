@@ -1,0 +1,59 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aks-helloworld
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: janusz.6613658ebc26427eaba3.eastus2.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: aks-helloworld-janusz
+            port: 
+              number: 80
+  - host: cameron.6613658ebc26427eaba3.eastus2.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: aks-helloworld-cameron
+            port: 
+              number: 80
+  - host: paul.6613658ebc26427eaba3.eastus2.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: aks-helloworld-paul
+            port: 
+              number: 80
+  - host: alfredo.6613658ebc26427eaba3.eastus2.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: aks-helloworld-alfredo
+            port: 
+              number: 80
+  - host: allissa.6613658ebc26427eaba3.eastus2.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: aks-helloworld-alissa
+            port: 
+              number: 80
+---
